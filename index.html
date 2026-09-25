@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titik Aman — Peta Spot Nugas &amp; Nongkrong UPI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-head">
+  <div class="head-row">
+    <div class="brand">
+      <span class="brand-mark">✚</span>
+      <div class="brand-text">
+        <span class="brand-title">Titik Aman</span>
+        <span class="brand-sub">Peta tempat nugas &amp; nongkrong — UPI Bumi Siliwangi</span>
+      </div>
+    </div>
+    <div class="scale-bar" aria-hidden="true">
+      <span>U</span>
+      <div class="scale-line"></div>
+      <span class="scale-label">DKV 2026 · Kelompok 16</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Kampus luas, tempat duduk<br>kadang seret.</h1>
+    <p class="hero-copy">Kumpulan titik ngechill — hasil susur kampus mahasiswa baru DKV.</p>
+
+    <div class="controls">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="searchInput" placeholder="Cari nama tempat, mis. 'taman' atau 'wifi kencang'...">
+      </div>
+      <div class="filter-row" id="filterRow"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="legend-strip" aria-label="Legenda kategori">
+    <div class="legend-item"><span class="dot dot-taman"></span>Taman &amp; Outdoor</div>
+    <div class="legend-item"><span class="dot dot-baca"></span>Perpustakaan &amp; Ruang Baca</div>
+    <div class="legend-item"><span class="dot dot-gedung"></span>Selasar &amp; Gedung</div>
+    <div class="legend-item"><span class="dot dot-kantin"></span>Kantin &amp; Kafe</div>
+  </section>
+
+  <section class="spots-section">
+    <div class="section-head">
+      <h2 id="resultTitle">Semua titik</h2>
+      <span id="resultCount" class="result-count"></span>
+    </div>
+    <div class="spot-grid" id="spotGrid"></div>
+    <p class="empty-state" id="emptyState" hidden>Belum ada titik yang cocok. Coba kata kunci lain, atau usulkan sendiri di bawah ⌄</p>
+  </section>
+
+  <section class="favorites-section">
+    <div class="section-head">
+      <h2>Pin favoritmu</h2>
+      <span class="result-count">tersimpan di browser ini</span>
+    </div>
+    <div class="spot-grid" id="favGrid"></div>
+    <p class="empty-state" id="favEmpty">Belum ada yang dipin. Tekan ikon pin di kartu manapun untuk menyimpannya di sini.</p>
+  </section>
+
+  <section class="suggest-section">
+    <div class="suggest-card">
+      <div class="suggest-text">
+        <h2>Tau titik lain?</h2>
+        <p>Tambahkan tempat yang menurutmu enak buat nugas atau nongkrong. Masukanmu langsung muncul di daftar "Usulan Angkatan" di bawah — kelompok bisa cek dan kurasi bareng.</p>
+      </div>
+      <form id="suggestForm" class="suggest-form">
+  <input type="text" id="fName" placeholder="Nama tempat" required maxlength="60">
+  <select id="fCategory" required>
+    <option value="" disabled selected>Kategori</option>
+    <option value="taman">Taman &amp; Outdoor</option>
+    <option value="baca">Perpustakaan &amp; Ruang Baca</option>
+    <option value="gedung">Selasar &amp; Gedung</option>
+    <option value="kantin">Kantin &amp; Kafe</option>
+  </select>
+  <textarea id="fDesc" placeholder="Kenapa tempat ini enak? (1-2 kalimat)" required maxlength="200" rows="2"></textarea>
+  <input type="url" id="fFoto" placeholder="URL Foto Gambar">
+  <input type="url" id="fGmaps" placeholder="URL Google Maps / Link Lokasi">
+  <button type="submit">Tambahkan ke daftar</button>
+</form>
+    </div>
+    <div class="spot-grid" id="userGrid"></div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>Dibuat mahasiswa baru DKV UPI — proyek Ospek Jurusan #SeputarUPI</p>
+  <p class="foot-small">Detail jam &amp; fasilitas bisa berubah, cek kondisi langsung di lapangan ya.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
